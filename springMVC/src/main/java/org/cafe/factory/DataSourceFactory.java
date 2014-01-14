@@ -1,6 +1,10 @@
 package org.cafe.factory;
 
 import java.io.InputStream;
+<<<<<<< HEAD
+=======
+import java.sql.SQLException;
+>>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -15,6 +19,10 @@ public class DataSourceFactory {
 	private final int DEFAULT_INITIAL_CONN_POOL_SIZE = 1;
 	private final int DEFAULT_MAX_CONN_POOL_SIZE = 10;
 	private final int DEFAULT_MAX_IDLE_TIME = 3000;
+<<<<<<< HEAD
+=======
+	private int acquireIncrement;
+>>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 	
 	private Map<String, DataSource> dsRegister = new HashMap<String, DataSource>();
 	
@@ -69,8 +77,43 @@ public class DataSourceFactory {
 		}
 	}
 	
+<<<<<<< HEAD
 	private DataSource buildDataSource(String branch){
 		com.jolbox.bonecp.BoneCPDataSource bds = null;
+=======
+	private DataSource buildDataSource(String branch) throws Exception{
+		com.jolbox.bonecp.BoneCPDataSource bds = null;
+		
+		try{
+			String dbUrl = dbProperties.getProperty(branch + ".dbUrl");
+			if (null == dbUrl) {
+				throw new SQLException(String.format("Invalid Branch Code [%s], can't find it in [s%].", branch, dbPropFile));
+			}
+			String dbUserId = dbProperties.getProperty(branch + "dbUserId");
+			String dbPassword = dbProperties.getProperty(branch + "dbPassword");
+			
+			//init connection pool
+			bds = new com.jolbox.bonecp.BoneCPDataSource();
+			bds.setJdbcUrl(dbUrl);
+			bds.setUsername(dbUserId);
+			bds.setPassword(dbPassword);
+			bds.setDriverClass(DEFAULT_DATABASE_DRIVER_CLASS_NAME);
+			
+			//set pool properties
+			bds.setDefaultAutoCommit(Boolean.parseBoolean(commonProperties.getProperty("autoCommit","true")));
+			bds.setIdleConnectionTestPeriodInSeconds(DEFAULT_MAX_IDLE_TIME);
+			bds.setMinConnectionsPerPartition(DEFAULT_INITIAL_CONN_POOL_SIZE);
+			bds.setMaxConnectionsPerPartition(DEFAULT_MAX_CONN_POOL_SIZE);
+			bds.setPartitionCount(3);
+			bds.setAcquireIncrement(acquireIncrement);
+			bds.setConnectionTimeout(DEFAULT_MAX_IDLE_TIME, null);
+			
+		}catch (Exception e){
+			System.out.println();
+			throw e;
+		}
+		return bds;
+>>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 	}
 
 	public String getDbPropFile() {
