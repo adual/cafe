@@ -1,10 +1,7 @@
 package org.cafe.factory;
 
 import java.io.InputStream;
-<<<<<<< HEAD
-=======
 import java.sql.SQLException;
->>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -19,10 +16,7 @@ public class DataSourceFactory {
 	private final int DEFAULT_INITIAL_CONN_POOL_SIZE = 1;
 	private final int DEFAULT_MAX_CONN_POOL_SIZE = 10;
 	private final int DEFAULT_MAX_IDLE_TIME = 3000;
-<<<<<<< HEAD
-=======
 	private int acquireIncrement;
->>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 	
 	private Map<String, DataSource> dsRegister = new HashMap<String, DataSource>();
 	
@@ -77,10 +71,6 @@ public class DataSourceFactory {
 		}
 	}
 	
-<<<<<<< HEAD
-	private DataSource buildDataSource(String branch){
-		com.jolbox.bonecp.BoneCPDataSource bds = null;
-=======
 	private DataSource buildDataSource(String branch) throws Exception{
 		com.jolbox.bonecp.BoneCPDataSource bds = null;
 		
@@ -113,7 +103,6 @@ public class DataSourceFactory {
 			throw e;
 		}
 		return bds;
->>>>>>> 2c310380cd354f23053bc6074bbb9d8642c6eea2
 	}
 
 	public String getDbPropFile() {
