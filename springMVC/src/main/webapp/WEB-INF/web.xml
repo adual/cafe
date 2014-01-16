@@ -1,7 +1,3 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
@@ -10,6 +6,16 @@
   	<param-name>contextConfigLocatoin</param-name>
   	<param-value>/WEB-INF/spring/root-context.xml</param-value>
   </context-param>
+  
+  <context-param>
+  	<param-name>log4jConfigLocation</param-name>
+  	<param-value>/WEB-INF/log4j.properties</param-value>
+  </context-param>
+  
+  <!-- 配置spring中对于log4j的listener,注意该Listener要在spring的listener之前  -->
+  <listener>
+  	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
   
   <filter>
   	<filter-name>CharacterEncodingFilter</filter-name>
