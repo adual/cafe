@@ -39,4 +39,10 @@ public class ContactDaoImpl implements ContactDao{
 		return false;
 	}
 
+
+	public String getSysDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
