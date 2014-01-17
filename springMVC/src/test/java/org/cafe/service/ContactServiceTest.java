@@ -30,13 +30,13 @@ public class ContactServiceTest extends TestCase {
 	@Test
 	public void testSave() throws DataAccessException, Exception {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"C:/Users/IBM_ADMIN/git/cafe/springMVC/src/main/webapp/WEB-INF/spring/root-context.xml");
+				"classpath*:spring/root-context.xml");
 		ContactService service = ctx.getBean("contactService",
 				org.cafe.service.ContactServiceImpl.class);
 		Contact contact = new Contact();
 		contact.setFirstName("anders");
 		contact.setLastName("adu");
-		// service.add(contact);
+		service.add(contact);
 		logger.info(service.getSysDate());
 
 	}
