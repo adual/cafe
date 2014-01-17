@@ -15,4 +15,6 @@ public abstract Contact queryById(long id);
 	public abstract void update(Contact contact);
 	
 	public abstract boolean delete(Contact contact);
+	
+	public abstract String getSysDate();
 }
