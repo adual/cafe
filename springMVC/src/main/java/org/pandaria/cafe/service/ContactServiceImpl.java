@@ -1,10 +1,9 @@
-package org.cafe.service;
+package org.pandaria.cafe.service;
 
 import java.util.List;
 import java.util.Map;
-
-import org.cafe.domain.Contact;
-import org.cafe.factory.JdbcTemplateFactory;
+import org.pandaria.cafe.domain.Contact;
+import org.pandaria.cafe.factory.JdbcTemplateFactory;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,7 +22,7 @@ public class ContactServiceImpl implements ContactService{
 	public List<Contact> retrieveAll() throws DataAccessException, Exception {
 		String sql = "SELECT * FROM CONTACT";
 		RowMapper<Contact> rowMapper = new BeanPropertyRowMapper<Contact>();
-		((BeanPropertyRowMapper)rowMapper).setMappedClass(org.cafe.domain.Contact.class);
+		((BeanPropertyRowMapper)rowMapper).setMappedClass(org.pandaria.cafe.domain.Contact.class);
 		List<Contact> list = jdbcTemplateFactory.buildJdbcTemplate().query(sql, rowMapper);
 		return list;
 	}

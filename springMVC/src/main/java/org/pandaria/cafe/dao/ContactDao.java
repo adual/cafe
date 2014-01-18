@@ -1,8 +1,7 @@
-package org.cafe.dao;
+package org.pandaria.cafe.dao;
 
 import java.util.List;
-
-import org.cafe.domain.Contact;
+import org.pandaria.cafe.domain.Contact;
 
 public interface ContactDao {
 

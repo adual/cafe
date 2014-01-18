@@ -1,10 +1,8 @@
-package org.cafe.dao;
+package org.pandaria.cafe.dao;
 
 import java.util.List;
-
 import javax.sql.DataSource;
-
-import org.cafe.domain.Contact;
+import org.pandaria.cafe.domain.Contact;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ContactDaoImpl implements ContactDao{

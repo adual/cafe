@@ -1,4 +1,4 @@
-package org.cafe.factory;
+package org.pandaria.cafe.factory;
 
 import javax.sql.DataSource;
 

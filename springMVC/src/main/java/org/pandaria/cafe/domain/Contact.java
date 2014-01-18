@@ -1,4 +1,4 @@
-package org.cafe.domain;
+package org.pandaria.cafe.domain;
 
 import java.io.Serializable;
 

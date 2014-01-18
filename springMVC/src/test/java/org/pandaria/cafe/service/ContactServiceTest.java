@@ -1,16 +1,15 @@
-package org.cafe.service;
+package org.pandaria.cafe.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import junit.framework.TestCase;
-
-import org.cafe.domain.Contact;
 import org.junit.Before;
 import org.junit.Test;
+import org.pandaria.cafe.domain.Contact;
+import org.pandaria.cafe.service.ContactService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -32,7 +31,7 @@ public class ContactServiceTest extends TestCase {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"classpath*:spring/root-context.xml");
 		ContactService service = ctx.getBean("contactService",
-				org.cafe.service.ContactServiceImpl.class);
+				org.pandaria.cafe.service.ContactServiceImpl.class);
 		Contact contact = new Contact();
 		contact.setFirstName("anders");
 		contact.setLastName("adu");
@@ -48,7 +47,7 @@ public class ContactServiceTest extends TestCase {
 					"classpath*:spring/root-context.xml");
 			System.out.println(ctx.containsBean("dataSource"));
 			 ContactService service = ctx.getBean("contactService",
-			 org.cafe.service.ContactServiceImpl.class);
+			 org.pandaria.cafe.service.ContactServiceImpl.class);
 			Contact contact = (Contact) ctx.getBean("contact");
 			/*
 			 * Contact contact = new Contact(); contact.setFirstName("anders");

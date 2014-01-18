@@ -1,8 +1,7 @@
-package org.cafe.service;
+package org.pandaria.cafe.service;
 
 import java.util.List;
-
-import org.cafe.domain.Contact;
+import org.pandaria.cafe.domain.Contact;
 import org.springframework.dao.DataAccessException;
 
 public interface ContactService {

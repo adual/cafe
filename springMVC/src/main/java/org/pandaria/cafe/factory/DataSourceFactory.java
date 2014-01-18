@@ -1,4 +1,4 @@
-package org.cafe.factory;
+package org.pandaria.cafe.factory;
 
 import java.io.InputStream;
 import java.sql.SQLException;
