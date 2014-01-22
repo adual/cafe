@@ -1,17 +1,17 @@
 package org.pandaria.cafe.domain;
 
 import java.io.Serializable;
+import java.sql.Date;
 
-import org.joda.time.DateTime;
 
-
+@SuppressWarnings("serial")
 public class Contact implements Serializable{
 
 	private Long id;
 	private int versoin;
 	private String firstName;
 	private String lastName;
-	private DateTime birthDate;
+	private Date birthDate;
 	private String description;
 	private byte[] photo;
 	
@@ -39,10 +39,10 @@ public class Contact implements Serializable{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public DateTime getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(DateTime birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 	public String getDescription() {
