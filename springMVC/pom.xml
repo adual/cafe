@@ -121,6 +121,13 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		
+		<!-- http serlvet -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>6.0.41</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>springMVC</finalName>
