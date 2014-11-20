@@ -7,4 +7,6 @@ package org.pandaria.cafe.common;
  */
 public class Constant {
 
+	public static final String JDBC_CONFIG = "jdbc.properties";
+
 }
