@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script type="text/javascript">  
+  
+			function doSubmit(){  
+				var info = $('#info').val()  
+				var url='自己项目的后台接口（如servlet）';    
+				$.get(url, {  
+				info : info,  
+				key : 2a5ad79d9ab0e365c2f8a5bc93afc4e4
+			}, function(json) {  
+				if(json != null){  
+					alert(json);  
+					document.getElementById("res").innerText = json;  
+				}else{  
+					document.getElementById("res").innerText = ' ';  
+				}  
+			});  
+			  
+			}  
+      
+		</script> 
+	</head>
+	<body>  
+		<textarea rows="5" cols="" placeholder="请输入内容" name="info" id="info"></textarea>  
+		<br>  
+		<input type="button" onclick="doSubmit()" value="提交">  
+		<br>  
+		<label id="res"></label>  
+	</body>  
+</html>

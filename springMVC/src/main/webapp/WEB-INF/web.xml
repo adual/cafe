@@ -60,9 +60,20 @@
   	</init-param>
   	<load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>WeixinRobot</display-name>
+  	<servlet-name>WeixinRobot</servlet-name>
+  	<servlet-class>org.pandaria.cafe.util.WeixinRobot</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>springMVC</servlet-name>
   	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WeixinRobot</servlet-name>
+  	<url-pattern>/WeixinRobot</url-pattern>
   </servlet-mapping>
   
 </web-app>
