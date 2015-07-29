@@ -14,8 +14,8 @@
 	<context:component-scan base-package="org.cafe,JUnit4"></context:component-scan>
 	<resources mapping="/resources/**" location="/resources/" />
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<beans:property name="prefix" value="/WEB-INF/views/" />
-	<beans:property name="suffix" value=".jspx" />
+	<beans:property name="prefix" value="/WEB-INF/" />
+	<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	<context:component-scan base-package="org.cafe.controller" />
+	<context:component-scan base-package="org.pandaria.cafe.controller" />
 </beans:beans>

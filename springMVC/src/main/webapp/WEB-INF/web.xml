@@ -1,3 +1,7 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+ 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
@@ -11,11 +15,6 @@
   	<param-name>log4jConfigLocation</param-name>
   	<param-value>/WEB-INF/log4j.properties</param-value>
   </context-param>
-  
-  <!-- 配置spring中对于log4j的listener,注意该Listener要在spring的listener之前  -->
-  <listener>
-  	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-  </listener>
   
   <filter>
   	<filter-name>CharacterEncodingFilter</filter-name>
@@ -45,6 +44,11 @@
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
   
+  <!-- 配置spring中对于log4j的listener,注意该Listener要在spring的listener之前  -->
+  <listener>
+  	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  
   <!-- Creates the Spring Container shared by all Servlets and Filters -->
   <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -56,24 +60,29 @@
   	<!-- The configuration for the separate sub application context -->
   	<init-param>
   		<param-name>contextConfigLocation</param-name>
-  		<param-value>/WEB-INF/spring/app-servlet/servlet-context.xml</param-value>
+  		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
   	</init-param>
   	<load-on-startup>1</load-on-startup>
   </servlet>
+  
   <servlet>
-  	<description>
-  	</description>
-  	<display-name>WeixinRobot</display-name>
   	<servlet-name>WeixinRobot</servlet-name>
+  	<display-name>WeixinRobot</display-name>
   	<servlet-class>org.pandaria.cafe.util.WeixinRobot</servlet-class>
   </servlet>
+  
   <servlet-mapping>
   	<servlet-name>springMVC</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>WeixinRobot</servlet-name>
   	<url-pattern>/WeixinRobot</url-pattern>
   </servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
   
 </web-app>

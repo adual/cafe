@@ -8,7 +8,7 @@
 	<name>springMVC Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<org.springframework.version>4.0.0.RELEASE</org.springframework.version>
+		<org.springframework.version>4.1.7.RELEASE</org.springframework.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,9 +58,15 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+		<!-- Spring web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
 		<!-- commons logging -->
@@ -137,6 +143,16 @@
 	    </dependency>
     
 	</dependencies>
+	
+	<repositories>
+		<!-- Spring Maven repository -->
+	    <repository>
+	        <id>io.spring.repo.maven.release</id>
+	        <url>http://repo.spring.io/release/</url>
+	        <snapshots><enabled>false</enabled></snapshots>
+	    </repository>
+	</repositories>
+	
 	<build>
 		<finalName>springMVC</finalName>
 		<plugins>
