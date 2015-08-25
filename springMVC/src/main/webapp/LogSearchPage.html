@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" ng-app="ngApp">
+<html lang="zh-CN" ng-app="store">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,8 @@
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <!-- Custom styles for this template -->
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/LogSearchPageControllerTest.js"></script>
 
   </head>
 
@@ -53,19 +55,15 @@
           </ul>
         </div><!--/.nav-collapse -->
       <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-        	<div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
-		      <input size="16" type="text" value="" readonly>
-		      <span class="add-on"><i class="icon-remove"></i></span>
-		      <span class="add-on"><i class="icon-calendar"></i></span>
-	    	</div>
-		 
+        <div class="input-append date form_datetime">
+            <input size="16" type="text" value="" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
         </div>
         
         <!-- Split button -->
-        <div>
-          <select class="input-sm" ng-model="env_selection" ng-option="">
-            <option class="input-sm input-sm"> - Env - </option>
+        <div  ng-controller="StoreController as store">
+          <select class="input-sm" multiple>
+            <option class="input-sm input-sm" ng-repeat="phone in store.products"> - {{phone.name}} - </option>
           </select>
         </div>
         <div class="input-group">
@@ -90,21 +88,6 @@
 	        startDate: "2013-02-14 10:00",
 	        minuteStep: 10
 	    });
-	    // angular app
-	    var app = angular.module("ngApp", [], function(){
-	        console.log("ng-app : ngApp");
-	    });
-	    
-	    // angular controller
-	    app.controller("ngCtl", [ '$scope', function($scope){
-    	    console.log("ng-controller : ngCtl");
-   	     $scope.myLabel = "text for label";
-   	     $scope.myInput = "text for input";
-
-   	     $scope.btnClicked = function() {
-    	console.log("Label is " + $scope.myLabel);
-   	     }
-	    }]);
 	</script>  
   </body>
 </html>
