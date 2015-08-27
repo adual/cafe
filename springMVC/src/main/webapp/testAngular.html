@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="store" lang="en">
+  <head>
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile device friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <script src="js/angular.min.js"></script>
+    <script src="js/LogSearchPageController.js"></script>
+  
+    <title></title>
+  </head>
+  <body>
+    Your name: <input type="text" ng-model="yourname" placeholder="World"></input>
+        <hr>
+        Hello {{yourname || 'World'}}!
+    <ul ng-controller="StoreController as store">
+      <li ng-repeat="phone in store.products">
+        {{phone.name}}
+      <p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+  </body>
+</html>
