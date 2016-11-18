@@ -1,0 +1,15 @@
+#Ignore java class files
+*.class
+
+#ignore war,ear package
+*.war
+*.ear
+
+#ignore build folder
+
+#ignore js dependencies
+*/node_modules/
+
+#ignore compiled js
+heroViewer/app/*.js
+heroViewer/app/*.js.map
