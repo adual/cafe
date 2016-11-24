@@ -9,6 +9,7 @@
 
 #ignore js dependencies
 */node_modules/
+*/bower_components/
 
 #ignore compiled js
 heroViewer/app/*.js

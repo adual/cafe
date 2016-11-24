@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   <br/>
   <input #box (keyup.enter)="keyOn(box.value)" (blur)="keyOn(box.value)">
   <p>{{values}}</p>
+  <hero-form></hero-form>
   `
 
 })
