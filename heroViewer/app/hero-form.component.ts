@@ -16,6 +16,8 @@ export class HeroFormComponent{
 
   onSubmit(){ this.submitted = true; }
 
+  newHero(){ this.model = new Hero(42,'',this.powers[0],''); }
+
   //TODO: remove this when we're done
   get diagnostic(){
     return JSON.stringify(this.model);
